@@ -33,6 +33,7 @@ acts as a ```self``` parameter for the algorithm.
 
 Now to buy and sell stocks we need to tell the algorithm how much of 
 each stock to buy and sell when we execute an order.  
+
 The ```make_weights``` function is an easy way for us to tell the 
 algorithm that we want to order a percent of the stock based on
 how much the short moving average is above the long moving average.
@@ -87,9 +88,10 @@ function to unpack results.
 returns, positions, orders = pf.utils.extract_rets_pos_txn_from_zipline(results)
 ```
 
-Two simple functions that help us visualize our model's performance
-display the returns.  The plots are too big to be effectively
-displayed on the screen so I usually just save them to a png.  
+Some simple functions help us visualize our model's performance.
+The plots are too big to be effectively
+displayed on the screen so saving them to a png is usually easier.  
+This function lets us view our returns.   
 ```python
 def plot_returns():
     pf.plot_rolling_returns(returns)
@@ -98,3 +100,8 @@ def plot_returns():
     plt.savefig("returns")
     plt.show()
 ```
+
+Check out some of the plots in the repository.  Nothing is stellar
+since this is about as simple of an algorithm that you can make, 
+but now you're well on your way to understanding the intracies of 
+more complex trading algorithms.
